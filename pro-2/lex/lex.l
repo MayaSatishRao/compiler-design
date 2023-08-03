@@ -19,17 +19,9 @@ negnum {negint}\.{num}|-\.{num}
 {posnum} pf++;
 {negnum} nf++;
 
-{posint}\/{posint}|{negint}\/{negint} pf++;
-{posint}\/{negint}|{negint}\/{posint} nf++;
+({posnum}|{posint})\/({posnum}|{posint})|({negnum}|{negint})\/({negnum}|{negint}) pf++;
+({posnum}|{negint})\/({posnum}|{negint})|({negnum}|{posint})\/({negnum}|{posint}) pf++;
 
-{posnum}\/{posnum}|{negnum}\/{negnum} pf++;
-{posnum}\/{negnum}|{negnum}\/{posnum} nf++;
-
-{posint}\/{posnum}|{negint}\/{negnum} pf++;
-{posint}\/{negnum}|{negint}\/{posnum} nf++;
-
-{posnum}\/{posint}|{negnum}\/{negint} pf++;
-{posnum}\/{negint}|{negnum}\/{posint} nf++;
 
 [\t ] ;
 [\n] return 0;
